@@ -1,0 +1,615 @@
+# PROMPT COMPLETO — DESENVOLVIMENTO DO APLICATIVO AGENDAMAIS+
+
+## 1. INSTRUÇÕES GERAIS
+
+Crie um aplicativo chamado **AgendaMais+**, uma plataforma digital de agendamento e acompanhamento de consultas médicas, desenvolvida principalmente para pessoas idosas, pessoas com dificuldades de leitura e usuários com pouca familiaridade com a tecnologia.
+
+O aplicativo deve possuir uma interface moderna, acolhedora, intuitiva, acessível e profissional.
+
+**IMPORTANTE:** Não quero apenas imagens ou telas ilustrativas. Quero um aplicativo funcional, com navegação entre telas, formulários, botões interativos, validação de dados, persistência das informações e funcionamento dos principais recursos.
+
+O principal diferencial do AgendaMais+ é a **acessibilidade descritiva por áudio**.
+
+Ao lado das funções importantes do aplicativo, deve existir um botão com o ícone de alto-falante. Quando o usuário tocar nesse botão, o aplicativo deverá explicar verbalmente o que aquela função faz e como utilizá-la.
+
+Exemplo: na opção "Agendar consulta", haverá um alto-falante. Quando o usuário tocar nele, deverá ouvir:
+
+"Agendar consulta. Nesta opção, você poderá escolher um médico, selecionar a data e o horário e confirmar seu agendamento."
+
+Esse recurso deve estar presente em todas as telas principais.
+
+## 2. IDENTIDADE VISUAL
+
+Nome do aplicativo: AgendaMais+
+
+Slogan: "Cuidar da saúde com mais autonomia, simplicidade e acessibilidade."
+
+Utilize a seguinte identidade visual:
+
+- Roxo-escuro principal: #35145F
+- Roxo intermediário: #65439B
+- Lilás: #B69CE5
+- Lilás-claro: #F2ECFA
+- Branco: #FFFFFF
+- Cinza para textos secundários: #666666
+- Verde para confirmações: #27845D
+- Vermelho para alertas: #C33B46
+
+O roxo-escuro deverá ser utilizado nos principais elementos da interface, como cabeçalhos, botões de confirmação e barra de navegação.
+
+O lilás deverá aparecer em cartões, elementos secundários e áreas de destaque.
+
+O fundo das telas deverá ser predominantemente branco ou lilás muito claro.
+
+Utilize cantos arredondados, sombras suaves, ícones facilmente reconhecíveis e espaçamento confortável.
+
+Evite excesso de informações, animações desnecessárias, textos pequenos e menus complexos.
+
+A identidade visual deverá transmitir confiança, cuidado, tranquilidade e acessibilidade.
+
+## 3. ACESSIBILIDADE — PRINCIPAL DIFERENCIAL
+
+Implemente um sistema de orientação por áudio que funcione em todo o aplicativo.
+
+Requisitos obrigatórios:
+
+1. Colocar um botão de alto-falante ao lado dos principais campos, botões e funcionalidades.
+2. Ao tocar no alto-falante, reproduzir uma explicação em português brasileiro.
+3. Utilizar síntese de voz (Text-to-Speech).
+4. Permitir repetir e interromper a narração.
+5. Não reproduzir várias narrações simultaneamente.
+6. Permitir ajustar a velocidade da voz.
+7. Permitir ativar ou desativar as orientações automáticas.
+8. Utilizar linguagem simples, evitando termos técnicos.
+9. Oferecer letras grandes e botões de fácil visualização.
+10. Manter o funcionamento do aplicativo mesmo com a narração desativada.
+
+Os botões de áudio deverão ser visualmente identificáveis, utilizando um ícone de alto-falante na cor roxa.
+
+**Importante:** o botão de áudio deve explicar a funcionalidade correspondente, e não apenas ler o nome do botão.
+
+## 4. ESTRUTURA GERAL — 22 TELAS
+
+Crie exatamente as seguintes 22 telas principais, utilizando componentes adicionais e janelas de confirmação quando necessário.
+
+### TELA 01 — Abertura (Splash Screen)
+
+Exibir:
+
+- Logotipo AgendaMais+ centralizado.
+- Fundo roxo-escuro.
+- Elementos decorativos em lilás.
+- Slogan do aplicativo.
+- Indicador discreto de carregamento.
+
+Após a inicialização, direcionar o usuário para a apresentação inicial ou para a página principal, caso já esteja autenticado.
+
+### TELA 02 — Boas-vindas
+
+Exibir:
+
+Título: "Bem-vindo ao AgendaMais+"
+
+Texto: "Suas consultas médicas de um jeito mais simples."
+
+Apresentar três benefícios:
+
+- Agende suas consultas com facilidade.
+- Escute orientações durante a navegação.
+- Receba lembretes dos seus agendamentos.
+
+Botões:
+
+- Entrar
+- Criar minha conta
+
+Adicionar um botão de alto-falante que explique como começar.
+
+### TELA 03 — Login
+
+Criar formulário contendo:
+
+- E-mail.
+- Senha.
+- Botão para mostrar ou ocultar a senha.
+- Botão "Entrar".
+- Link "Esqueci minha senha".
+- Link "Criar conta".
+
+Adicionar ícones de alto-falante ao lado dos campos.
+
+Implementar validação de e-mail e senha, mensagens de erro compreensíveis e autenticação real quando houver backend configurado.
+
+Após o login, direcionar para a tela inicial.
+
+### TELA 04 — Cadastro
+
+Criar formulário contendo:
+
+- Nome completo.
+- Data de nascimento.
+- E-mail.
+- Telefone.
+- Senha.
+- Confirmação de senha.
+
+Apresentar as informações em campos grandes, com explicações por áudio.
+
+Incluir aceite dos termos de uso e da política de privacidade.
+
+Não solicitar informações médicas desnecessárias.
+
+Botão principal: "Criar minha conta".
+
+### TELA 05 — Recuperação de Senha
+
+Permitir recuperar o acesso à conta por e-mail.
+
+Exibir:
+
+- Campo de e-mail.
+- Botão "Enviar instruções".
+- Mensagem de confirmação.
+- Opção para voltar ao login.
+
+Não exibir informações que permitam descobrir se determinado e-mail pertence a outro usuário.
+
+### TELA 06 — Configuração Inicial de Acessibilidade
+
+Após o primeiro cadastro, perguntar ao usuário como prefere utilizar o aplicativo.
+
+Disponibilizar:
+
+- Tamanho da fonte: normal, grande e extragrande.
+- Velocidade da narração: lenta, normal e rápida.
+- Orientação automática por áudio: ativada ou desativada.
+- Alto contraste: ativado ou desativado.
+
+Incluir um botão para testar a voz.
+
+Salvar essas configurações na conta do usuário.
+
+### TELA 07 — Página Inicial
+
+Esta será a principal tela do AgendaMais+.
+
+Exibir no topo:
+
+- Logotipo.
+- Saudação: "Olá, [nome do usuário]!"
+- Ícone de notificações.
+- Acesso ao perfil.
+
+No centro, apresentar cartões grandes:
+
+1. Agendar consulta.
+2. Minhas consultas.
+3. Médicos e especialidades.
+4. Consultas online.
+
+Abaixo, apresentar um cartão com a próxima consulta agendada, caso exista.
+
+Adicionar um botão de áudio em cada cartão.
+
+Na parte inferior, utilizar uma barra de navegação com quatro opções:
+
+- Início.
+- Consultas.
+- Notificações.
+- Perfil.
+
+### TELA 08 — Buscar Especialidade
+
+Exibir uma lista de especialidades médicas disponíveis.
+
+Exemplos para demonstração:
+
+- Clínica geral.
+- Cardiologia.
+- Dermatologia.
+- Oftalmologia.
+- Ortopedia.
+- Geriatria.
+
+Cada especialidade deverá possuir um cartão com nome, ícone e botão de orientação por áudio.
+
+Incluir campo de pesquisa e opção de voltar.
+
+### TELA 09 — Lista de Médicos
+
+Após selecionar uma especialidade, apresentar os profissionais disponíveis.
+
+Cada cartão deverá conter:
+
+- Foto ilustrativa ou avatar.
+- Nome do profissional.
+- Especialidade.
+- Número de registro profissional, quando cadastrado.
+- Clínica ou local de atendimento.
+- Modalidade de atendimento.
+- Botão "Ver horários".
+
+Utilizar profissionais fictícios claramente identificados como dados de demonstração até existirem parceiros reais.
+
+### TELA 10 — Perfil do Médico
+
+Exibir informações detalhadas do profissional:
+
+- Nome.
+- Especialidade.
+- Registro profissional.
+- Local de atendimento.
+- Modalidade presencial ou online.
+- Dias disponíveis.
+- Horários disponíveis.
+
+Botão principal: "Escolher horário".
+
+Incluir explicações por áudio.
+
+### TELA 11 — Escolher Data e Horário
+
+Criar um calendário interativo.
+
+Requisitos:
+
+- Mostrar os dias disponíveis.
+- Desabilitar datas indisponíveis.
+- Exibir horários disponíveis para a data selecionada.
+- Permitir selecionar apenas um horário por agendamento.
+- Diferenciar visualmente horários livres e ocupados.
+
+Botão principal: "Continuar".
+
+Não permitir selecionar datas passadas.
+
+### TELA 12 — Confirmar Agendamento
+
+Exibir um resumo contendo:
+
+- Nome do médico.
+- Especialidade.
+- Data.
+- Horário.
+- Modalidade.
+- Endereço da clínica ou informação sobre consulta online.
+
+Botões:
+
+- Confirmar agendamento.
+- Voltar e alterar.
+
+Após confirmar, registrar o agendamento no banco de dados.
+
+Impedir agendamentos duplicados no mesmo horário para o mesmo profissional.
+
+### TELA 13 — Agendamento Confirmado
+
+Exibir uma confirmação visual com ícone de sucesso.
+
+Mensagem:
+
+"Sua consulta foi agendada com sucesso!"
+
+Apresentar os detalhes do agendamento.
+
+Botões:
+
+- Ver minhas consultas.
+- Voltar ao início.
+
+Oferecer um botão de áudio para ler a confirmação.
+
+### TELA 14 — Minhas Consultas
+
+Criar uma tela com três categorias:
+
+- Próximas consultas.
+- Consultas realizadas.
+- Consultas canceladas.
+
+Cada consulta deverá aparecer em um cartão com:
+
+- Nome do profissional.
+- Especialidade.
+- Data.
+- Horário.
+- Situação do agendamento.
+
+Ao selecionar uma consulta, abrir a tela de detalhes.
+
+### TELA 15 — Detalhes da Consulta
+
+Apresentar todas as informações de uma consulta selecionada.
+
+Disponibilizar ações:
+
+- Ouvir informações.
+- Reagendar consulta.
+- Cancelar consulta.
+- Voltar.
+
+Para cancelamento, solicitar confirmação antes de executar.
+
+Para reagendamento, apresentar novamente o calendário com horários disponíveis.
+
+Atualizar o registro após cada operação.
+
+### TELA 16 — Consultas Online
+
+Criar uma área dedicada aos atendimentos por videochamada.
+
+Exibir as consultas online agendadas.
+
+Quando a consulta estiver habilitada para acesso, disponibilizar o botão:
+
+"Entrar na consulta".
+
+Implementar uma sala de videochamada apenas quando houver integração real com um serviço apropriado.
+
+Caso a integração ainda não esteja configurada, apresentar claramente a funcionalidade como demonstração, sem simular uma consulta médica real.
+
+### TELA 17 — Notificações e Lembretes
+
+Criar uma central de notificações.
+
+Exemplos:
+
+- Consulta agendada com sucesso.
+- Sua consulta será amanhã.
+- Sua consulta será hoje.
+- Sua consulta foi reagendada.
+- Sua consulta foi cancelada.
+
+Cada notificação deverá ter:
+
+- Ícone.
+- Mensagem.
+- Data.
+- Indicação de leitura.
+- Botão para ouvir.
+
+Permitir marcar notificações como lidas.
+
+### TELA 18 — Perfil do Usuário
+
+Exibir:
+
+- Nome completo.
+- Foto ou avatar.
+- E-mail.
+- Telefone.
+- Data de nascimento.
+
+Disponibilizar:
+
+- Editar meus dados.
+- Configurações.
+- Ajuda.
+- Sair da conta.
+
+O usuário deverá visualizar apenas seus próprios dados.
+
+### TELA 19 — Editar Dados Pessoais
+
+Permitir atualizar:
+
+- Nome.
+- Telefone.
+- Foto de perfil.
+- E-mail, com verificação quando necessário.
+
+Incluir botões:
+
+- Salvar alterações.
+- Cancelar.
+
+Apresentar mensagens de confirmação e erro.
+
+### TELA 20 — Configurações
+
+Criar uma tela organizada em seções.
+
+**Acessibilidade**
+
+- Tamanho da fonte.
+- Alto contraste.
+- Ativar ou desativar narração automática.
+- Velocidade da voz.
+- Testar áudio.
+
+**Notificações**
+
+- Ativar ou desativar lembretes.
+- Preferência de antecedência dos lembretes.
+
+**Conta e segurança**
+
+- Alterar senha.
+- Política de privacidade.
+- Termos de uso.
+- Solicitar exclusão da conta.
+
+**Aplicativo**
+
+- Informações sobre o AgendaMais+.
+- Versão do aplicativo.
+- Sair da conta.
+
+Todas as configurações deverão funcionar e permanecer salvas após fechar e reabrir o aplicativo.
+
+### TELA 21 — Ajuda e Suporte
+
+Criar uma central de ajuda com perguntas frequentes.
+
+Exemplos:
+
+- Como agendar uma consulta?
+- Como cancelar uma consulta?
+- Como usar o botão de áudio?
+- Como alterar minha senha?
+- Como acessar uma consulta online?
+
+Cada resposta deverá possuir um botão para reprodução por áudio.
+
+Adicionar um formulário para enviar dúvidas ou sugestões.
+
+### TELA 22 — Sobre o AgendaMais+
+
+Exibir o nome e o logotipo do aplicativo.
+
+Apresentar o texto:
+
+"O AgendaMais+ é uma proposta de plataforma digital desenvolvida para facilitar o agendamento e acompanhamento de consultas médicas, priorizando a acessibilidade, a simplicidade e a autonomia de pessoas idosas."
+
+Apresentar os objetivos:
+
+- Facilitar o acesso aos serviços de saúde.
+- Promover inclusão digital.
+- Reduzir dificuldades na utilização de aplicativos.
+- Oferecer orientação por áudio.
+- Incentivar a autonomia dos usuários.
+
+Incluir os integrantes do projeto:
+
+- Vitor.
+- Francielle.
+
+## 5. FLUXO COMPLETO DE NAVEGAÇÃO
+
+O aplicativo deverá seguir este fluxo:
+
+Abertura → Boas-vindas → Login ou Cadastro → Configuração inicial de acessibilidade → Página inicial.
+
+Para agendar uma consulta:
+
+Página inicial → Buscar especialidade → Lista de médicos → Perfil do médico → Escolher data e horário → Confirmar agendamento → Agendamento confirmado.
+
+Para acompanhar consultas:
+
+Página inicial → Minhas consultas → Detalhes da consulta → Reagendar ou cancelar, quando permitido.
+
+Para configurações:
+
+Página inicial → Perfil → Configurações → Alterar preferências → Salvar.
+
+Todas as telas secundárias deverão oferecer navegação de retorno.
+
+A barra inferior deverá permanecer disponível nas telas principais.
+
+## 6. BANCO DE DADOS E FUNCIONALIDADES REAIS
+
+Criar uma estrutura de dados para:
+
+**Usuários**
+- Identificador.
+- Nome.
+- Data de nascimento.
+- E-mail.
+- Telefone.
+- Preferências de acessibilidade.
+
+**Profissionais**
+- Identificador.
+- Nome.
+- Especialidade.
+- Registro profissional.
+- Local de atendimento.
+- Modalidades disponíveis.
+
+**Agendamentos**
+- Identificador.
+- Usuário.
+- Profissional.
+- Data.
+- Horário.
+- Modalidade.
+- Situação.
+
+**Notificações**
+- Identificador.
+- Usuário.
+- Mensagem.
+- Data.
+- Situação de leitura.
+
+**Configurações**
+- Usuário.
+- Tamanho da fonte.
+- Alto contraste.
+- Velocidade da voz.
+- Preferências de áudio.
+- Preferências de notificações.
+
+Utilizar autenticação segura e banco de dados persistente.
+
+As senhas não deverão ser armazenadas em texto simples.
+
+Cada usuário poderá acessar somente seus próprios dados e agendamentos.
+
+## 7. RESPONSIVIDADE E TECNOLOGIA
+
+O aplicativo deverá ser desenvolvido com foco em dispositivos móveis Android e iOS.
+
+Utilizar uma estrutura responsiva, com atenção especial às dimensões de celulares.
+
+Se a ferramenta permitir desenvolvimento multiplataforma, priorizar uma tecnologia apropriada para aplicativos móveis.
+
+Caso a ferramenta gere apenas aplicações web, desenvolver uma versão responsiva com comportamento de aplicativo e explicar quais etapas adicionais seriam necessárias para publicação nas lojas Android e iOS.
+
+Utilizar componentes reutilizáveis, código organizado e estrutura que permita futuras atualizações.
+
+## 8. REGRAS IMPORTANTES
+
+- Não criar botões decorativos sem funcionamento.
+- Não criar links que levem a páginas vazias.
+- Não perder informações ao navegar entre telas.
+- Não permitir agendamentos em horários indisponíveis.
+- Não exibir informações pessoais de outros usuários.
+- Não solicitar dados de saúde sem necessidade.
+- Não apresentar médicos fictícios como profissionais reais.
+- Não afirmar que consultas online funcionam sem integração efetiva.
+- Não utilizar letras pequenas ou interfaces visualmente poluídas.
+- Não substituir os botões de áudio por textos explicativos comuns.
+
+Seguir boas práticas de acessibilidade, proteção de dados e segurança.
+
+## 9. DADOS PARA DEMONSTRAÇÃO
+
+Caso ainda não exista backend ou integração com clínicas reais, criar um modo de demonstração com:
+
+- Usuário fictício.
+- Médicos fictícios.
+- Especialidades médicas.
+- Datas e horários de exemplo.
+- Consultas agendadas de demonstração.
+- Notificações de exemplo.
+
+Os dados deverão estar claramente identificados como demonstração.
+
+O modo de demonstração deverá permitir testar o fluxo completo de agendamento, reagendamento e cancelamento.
+
+## 10. RESULTADO FINAL ESPERADO
+
+Entregar um aplicativo AgendaMais+ contendo:
+
+1. As 22 telas principais descritas.
+2. Identidade visual roxa, lilás e branca.
+3. Navegação funcional entre as telas.
+4. Login e cadastro.
+5. Configurações de acessibilidade.
+6. Botões de orientação por áudio.
+7. Busca de especialidades e profissionais.
+8. Agendamento, reagendamento e cancelamento.
+9. Histórico e acompanhamento de consultas.
+10. Notificações e lembretes.
+11. Área de consultas online.
+12. Perfil e configurações do usuário.
+13. Armazenamento persistente dos dados.
+14. Layout responsivo e acessível.
+
+**PRIORIDADE ABSOLUTA:** O AgendaMais+ deve ser desenvolvido pensando em pessoas idosas e pessoas com dificuldades de leitura. A interface precisa ser extremamente simples, e o recurso de orientação por áudio deve funcionar de verdade.
+
+Comece criando a estrutura completa do aplicativo e suas telas. Depois implemente a navegação, os formulários, o armazenamento de dados e as funcionalidades. Ao finalizar, identifique claramente o que está funcionando e o que ainda depende de integrações externas.
+
+Não considere o projeto concluído enquanto houver telas incompletas, botões sem ação ou fluxos de navegação interrompidos.
