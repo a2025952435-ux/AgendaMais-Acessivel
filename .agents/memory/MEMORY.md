@@ -1,0 +1,1 @@
+- [Escopo do AgendaMais+](agenda-mais-scope.md) — manter as 22 telas como protótipo acadêmico, sem serviço médico, conta real ou áudio funcional.
