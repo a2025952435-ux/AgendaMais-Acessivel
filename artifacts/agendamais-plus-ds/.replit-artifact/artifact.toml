@@ -1,0 +1,19 @@
+kind = "design-system"
+previewPath = "/agendamais-plus-ds/"
+title = "AgendaMais+ Design System"
+description = "Sistema de design extraído do AgendaMais+: uma linguagem visual acolhedora, legível e acessível para o protótipo acadêmico de consultas demonstrativas voltado a pessoas idosas."
+version = "1.0.0"
+id = "artifacts/agendamais-plus-ds"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/agendamais-plus-ds/" ]
+localPort = 20016
+
+[services.development]
+run = "pnpm --filter @workspace/agendamais-plus-ds run dev"
+
+[services.env]
+PORT = "20016"
+BASE_PATH = "/agendamais-plus-ds/"
